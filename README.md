@@ -1,31 +1,36 @@
+## 👋 你好，我是 ZYYO！
+欢迎来到我的 GitHub 主页！我是一名后端开发者，专注于构建高效的后端服务。我对后端技术充满热情，同时也对前端开发有一定的了解。我在这里分享我的项目、学习笔记和一些有趣的想法。
+### 🚀 我的技能
 
-<!-- <picture>
-  <source
-    srcset="https://github-readme-stats-one-bice.vercel.app/api?username=haers&show_icons=true&icon_color=0366d6&bg_color=ffffff&theme=dark&include_all_commits=true&count_private=true&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR"
-    media="(prefers-color-scheme: dark)" />
-  <source
-    srcset="https://github-readme-stats-one-bice.vercel.app/api?username=haers&show_icons=true&icon_color=0366d6&bg_color=ffffff&theme=algolia&include_all_commits=true&count_private=true&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR"
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
-  <img src="https://github-readme-stats-one-bice.vercel.app/api?username=haers&show_icons=true&icon_color=0366d6&bg_color=ffffff&theme=algolia&include_all_commits=true&count_private=true&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR"
-    align="right" />
-</picture> -->
+- 后端开发:  java, springboot, mysql, redis, python
+- 前端开发:  HTML, CSS, JavaScript ,Vue 3, Vue Router, Pinia, Element UI, nuxt,PrimeVue, tailwind
+- 工具与环境: idea , vscode, Git, docker
+- 其他技能: 数据抓取
 
-- 👋 Hi, I’m @haers
-- 💻 Software engineer
-- 🕸 Full-Stack Web Developer
-- ☕️ Inide hacker
-- 📱 Learning AIGC related
-- 📷 Interested in photography
-- 📍 Living in Shenzhen, China
-- 📫 Reach me - 
+
+### 📝 博客与文章
+
+我偶尔会写一些技术文章，分享我的学习和经验。你可以前往我的博客或者主页
+
+如果你有任何问题或想与我合作，欢迎通过以下方式联系我：
+
+- **微信**，记得写好备注信息和目的，感谢～:
+
+![wx](static/img/wx.jpg)
+
+
+感谢你花时间访问我的 GitHub 主页！如果你喜欢我的项目或文章，欢迎给我一个 ⭐️ 或者关注我，我会继续分享更多有趣的内容。
+
+ [![My Skills](https://skillicons.dev/icons?i=git,nginx,cloudflare,postman,vscode,linux,windows,vue,vite,nuxt,twitter,redis,py,pycharm,pnpm,pinia,docker,idea,maven,mysql,md,jquery,kafka,java,js,html,hibernate,eclipse,github,css,vim)](https://skillicons.dev)
+
+
+
+
 
 | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=haers&show_icons=true&include_all_commits=true&count_private=true&theme=buefy&hide_border=true&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR" alt="Anurag's github stats" /></a> | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact&theme=buefy&hide_border=true" /></a> |
 | ------------- | ------------- |
 
-<!---
-haers/haers is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+
 
 
   <!-- snake contribution -->
