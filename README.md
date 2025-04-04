@@ -20,12 +20,7 @@
 
 
 
-# profile 页面效果
-这里面所有的效果，都可以参考我的源码。
-
-其他的一些效果，在另外一个文件中 
-
-[查看其他效果](./其他一些好看的效果.md)
+# 技能图
 
 | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=haers&show_icons=true&include_all_commits=true&count_private=true&theme=buefy&hide_border=true&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR" alt="Anurag's github stats" /></a> | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact&theme=buefy&hide_border=true" /></a> |
 | ------------- | ------------- |
@@ -39,6 +34,15 @@
     <source media="(prefers-color-scheme: light)" srcset="github-contribution-snake/github-contribution-grid-snake.svg" />
     <img alt="github-snake" src="github-contribution-snake/github-contribution-grid-snake-dark.svg" />
   </picture>
+
+
+# profile 页面效果
+这里面所有的效果，都可以参考我的源码。
+
+其他的一些效果，在另外一个文件中 
+
+[查看其他效果](./其他一些好看的效果.md)
+
 
 # 联系我
 
