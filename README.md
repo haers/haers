@@ -16,7 +16,10 @@
 
 - **微信**，记得写好备注信息和目的，感谢～:
 
-![wx](static/img/wx.jpg)
+<picture style="display: block; margin: 0 auto;">
+  <source srcset="static/img/wx.jpg" type="image/jpg">
+  <img src="static/img/wx.jpg" alt="Demo" width="800" style="max-width: 50%;">
+</picture>
 
 
 感谢你花时间访问我的 GitHub 主页！如果你喜欢我的项目或文章，欢迎给我一个 ⭐️ 或者关注我，我会继续分享更多有趣的内容。
@@ -25,7 +28,12 @@
 
 
 
+# 效果
+这里面所有的效果，都可以参考我的源码。
 
+其他的一些效果，在另外一个文件中 
+
+[查看其他效果](./其他一些好看的效果.md)
 
 | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=haers&show_icons=true&include_all_commits=true&count_private=true&theme=buefy&hide_border=true&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR" alt="Anurag's github stats" /></a> | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact&theme=buefy&hide_border=true" /></a> |
 | ------------- | ------------- |
