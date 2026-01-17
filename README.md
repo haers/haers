@@ -46,11 +46,6 @@
 
 # 联系我
 
-如果你有任何问题或想与我合作，欢迎通过以下方式联系我：
+如果你有任何问题或想与我合作，可以在当前项目提 issue
 
-> **微信**，记得写好备注信息和目的，感谢～
 
-<picture style="display: block; margin: 0 auto;">
-  <source srcset="static/img/wx.jpg" type="image/jpg">
-  <img src="static/img/wx.jpg" alt="Demo" width="800" style="max-width: 50%; max-height: 50%;">
-</picture>
