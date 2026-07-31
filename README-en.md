@@ -19,7 +19,7 @@
 - 📍 Living in Shenzhen, China
 - 📫 Reach me - 
 
-| <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=haers&show_icons=true&include_all_commits=true&count_private=true&theme=buefy&hide_border=true&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR" alt="Anurag's github stats" /></a> | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact&theme=buefy&hide_border=true" /></a> |
+| <a href="https://github.com/stats-organization/github-stats-extended"><img align="center" src="https://github-stats-extended.vercel.app/api?username=haers&show_icons=true&include_all_commits=true&count_private=true&theme=buefy&hide_border=true&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR" alt="haers GitHub stats" /></a> | <a href="https://github.com/stats-organization/github-stats-extended"><img align="center" src="https://github-stats-extended.vercel.app/api/top-langs/?username=haers&layout=compact&theme=buefy&hide_border=true" /></a> |
 | ------------- | ------------- |
 
 <!---
