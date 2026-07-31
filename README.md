@@ -10,11 +10,9 @@
 
 # 📝 博客与文章
 
-我偶尔会写一些技术文章，分享我的学习和经验。你可以前往我的博客或者主页
+我偶尔会写一些技术文章，分享学习和经验（有公开链接时再贴在这里）。
 
-
-
-感谢你花时间访问我的 GitHub 主页！如果你喜欢我的项目或文章，欢迎给我一个 ⭐️ 或者关注我，我会继续分享更多有趣的内容。
+感谢你花时间访问我的 GitHub 主页！如果喜欢我的项目，欢迎 ⭐️ 或关注。
 
  [![My Skills](https://skillicons.dev/icons?i=git,nginx,cloudflare,postman,vscode,linux,windows,vue,vite,nuxt,twitter,redis,py,pycharm,pnpm,pinia,docker,idea,maven,mysql,md,jquery,kafka,java,js,html,hibernate,eclipse,github,css,vim)](https://skillicons.dev)
 
