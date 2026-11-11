@@ -30,11 +30,11 @@ def picture(light, dark, alt, width=440):
 def stats_card(kind="stats", english=False):
     """开发统计：使用同一配色生成双语替代文本。"""
     path = "/api?username=haers&show_icons=true" if kind == "stats" else "/api/top-langs/?username=haers&layout=compact"
-    url = STATS + path + "&hide_border=true&title_color=58a6ff&icon_color=58a6ff"
+    url = STATS + path + "&hide_border=true"
     alt = "Public GitHub development statistics for haers" if kind == "stats" else "Languages used in haers public repositories"
     if not english:
         alt = "haers 的公开 GitHub 开发统计" if kind == "stats" else "haers 的公开仓库语言分布"
-    return picture(url + "&theme=default", url + "&theme=github_dark", alt, 400)
+    return picture(url + "&theme=default&title_color=0969da&icon_color=0969da", url + "&theme=github_dark&title_color=58a6ff&icon_color=58a6ff", alt, 400)
 
 
 def skills(english=False):
@@ -59,13 +59,14 @@ def roast():
 
 def pin():
     """项目卡片：展示已核实的公开资源站仓库。"""
-    base = STATS + "/api/pin/?username=haers&repo=zhao-resource&hide_border=true&title_color=58a6ff&icon_color=58a6ff"
-    return '<a href="https://github.com/haers/zhao-resource">\n' + picture(base + "&theme=default", base + "&theme=github_dark", "小赵资源站仓库卡片") + '\n</a>'
+    base = STATS + "/api/pin/?username=haers&repo=zhao-resource&hide_border=true"
+    return '<a href="https://github.com/haers/zhao-resource">\n' + picture(base + "&theme=default&title_color=0969da&icon_color=0969da", base + "&theme=github_dark&title_color=58a6ff&icon_color=58a6ff", "小赵资源站仓库卡片") + '\n</a>'
 
 
 def code_block(snippet):
     """折叠示例：为画廊中的实际预览提供可复制源码。"""
-    return f"<details>\n<summary>展开查看代码</summary>\n\n```html\n{snippet}\n```\n\n</details>"
+    language = "html" if snippet.lstrip().startswith("<") else "markdown"
+    return f"<details>\n<summary>展开查看代码</summary>\n\n```{language}\n{snippet}\n```\n\n</details>"
 
 
 def profile(english=False):
@@ -141,8 +142,16 @@ def profile(english=False):
 def gallery():
     """效果画廊：统一组织预览、源码与第三方来源。"""
     intro = "> 大家好，我是 haers，一名以 Java 开发为主的软件研发工程师。喜欢折腾工具，也喜欢手机摄影。"
+    detailed_intro = "\n".join([
+        "> 大家好，我是 haers，一名以 Java 开发为主的软件研发工程师。",
+        ">",
+        "> - 后端开发是日常，也探索前端、桌面工具和自动化。",
+        "> - 在中国生活，喜欢手机摄影。",
+        "> - 正在分享自己的资源站、歇刻和书库项目。",
+    ])
     sections = [
-        ("个人介绍", "用两句话说明开发方向与兴趣，适合放在主页开头。", intro, "Markdown 引用块", "https://docs.github.com/en/get-started/writing-on-github/basic-writing-and-formatting-syntax"),
+        ("简短介绍", "用两句话说明开发方向与兴趣，适合放在主页开头。", intro, "Markdown 引用块", "https://docs.github.com/en/get-started/writing-on-github/basic-writing-and-formatting-syntax"),
+        ("详细介绍", "用简短列表补充开发方向、兴趣和项目，适合需要更多背景的主页。", detailed_intro, "Markdown 引用块", "https://docs.github.com/en/get-started/writing-on-github/basic-writing-and-formatting-syntax"),
         ("技术图标", "精选 12 个常用技术。窄屏切换为两行，图片与主页共用。", skills(), "Skill Icons", "https://github.com/tandpfun/skill-icons"),
         ("开发统计", "开发数据和语言分布跟随系统明暗主题。语言分布来自公开仓库，可点击来源了解统计口径。", stats_card() + "\n" + stats_card("languages"), "github-stats-extended", "https://github.com/stats-organization/github-stats-extended"),
         ("项目卡片", "用小赵资源站演示仓库卡片，点击卡片进入仓库。", pin(), "github-stats-extended", "https://github.com/stats-organization/github-stats-extended"),

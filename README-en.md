@@ -43,12 +43,12 @@ Static site · [Explore](https://github.com/haers/zhao-book-public)
 ## Development activity
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=haers&show_icons=true&hide_border=true&title_color=58a6ff&icon_color=58a6ff&theme=github_dark" />
-  <img src="https://github-stats-extended.vercel.app/api?username=haers&show_icons=true&hide_border=true&title_color=58a6ff&icon_color=58a6ff&theme=default" alt="Public GitHub development statistics for haers" width="400" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=haers&show_icons=true&hide_border=true&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />
+  <img src="https://github-stats-extended.vercel.app/api?username=haers&show_icons=true&hide_border=true&theme=default&title_color=0969da&icon_color=0969da" alt="Public GitHub development statistics for haers" width="400" />
 </picture>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=haers&layout=compact&hide_border=true&title_color=58a6ff&icon_color=58a6ff&theme=github_dark" />
-  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=haers&layout=compact&hide_border=true&title_color=58a6ff&icon_color=58a6ff&theme=default" alt="Languages used in haers public repositories" width="400" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=haers&layout=compact&hide_border=true&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=haers&layout=compact&hide_border=true&theme=default&title_color=0969da&icon_color=0969da" alt="Languages used in haers public repositories" width="400" />
 </picture>
 
 [Statistics source](https://github.com/stats-organization/github-stats-extended) · [Score details](https://ghfind.com/u/haers?ref=badge)

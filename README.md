@@ -43,12 +43,12 @@ macOS · 发布与更新 · [查看项目](https://github.com/haers/xieke-releas
 ## 开发记录
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=haers&show_icons=true&hide_border=true&title_color=58a6ff&icon_color=58a6ff&theme=github_dark" />
-  <img src="https://github-stats-extended.vercel.app/api?username=haers&show_icons=true&hide_border=true&title_color=58a6ff&icon_color=58a6ff&theme=default" alt="haers 的公开 GitHub 开发统计" width="400" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=haers&show_icons=true&hide_border=true&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />
+  <img src="https://github-stats-extended.vercel.app/api?username=haers&show_icons=true&hide_border=true&theme=default&title_color=0969da&icon_color=0969da" alt="haers 的公开 GitHub 开发统计" width="400" />
 </picture>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=haers&layout=compact&hide_border=true&title_color=58a6ff&icon_color=58a6ff&theme=github_dark" />
-  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=haers&layout=compact&hide_border=true&title_color=58a6ff&icon_color=58a6ff&theme=default" alt="haers 的公开仓库语言分布" width="400" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=haers&layout=compact&hide_border=true&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=haers&layout=compact&hide_border=true&theme=default&title_color=0969da&icon_color=0969da" alt="haers 的公开仓库语言分布" width="400" />
 </picture>
 
 [统计来源](https://github.com/stats-organization/github-stats-extended) · [查看评分详情](https://ghfind.com/u/haers?ref=badge)
