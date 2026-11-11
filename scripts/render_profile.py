@@ -58,12 +58,24 @@ def roast():
 
 
 def pin(repo="zhao-resource", name="小赵资源站", english=False):
-    """第三方仓库卡片：统一尺寸与明暗主题，点击进入对应仓库。"""
-    base = f"{STATS}/api/pin/?username=haers&repo={repo}"
-    light = base + "&theme=default&title_color=0969da&icon_color=0969da"
-    dark = base + "&theme=github_dark&title_color=58a6ff&icon_color=58a6ff"
+    """仓库卡片：桌面三列同高，手机切换为宽卡，均由第三方服务渲染。"""
+    base = f"{STATS}/api/pin/?username=haers&repo={repo}&description_lines_count=3"
+    light = "&theme=default&title_color=0969da&icon_color=0969da"
+    dark = "&theme=github_dark&title_color=58a6ff&icon_color=58a6ff"
     alt = f"{repo} repository card" if english else f"{name}仓库卡片"
-    return f'<a href="https://github.com/haers/{repo}">\n' + picture(light, dark, alt, 400) + '\n</a>'
+    return f'''<a href="https://github.com/haers/{repo}">
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="{base}&card_width=400{dark}" />
+  <source media="(max-width: 600px)" srcset="{base}&card_width=400{light}" />
+  <source media="(prefers-color-scheme: dark)" srcset="{base}&card_width=260{dark}" />
+  <img src="{base}&card_width=260{light}" alt="{alt}" />
+</picture>
+</a>'''
+
+
+def project_cards(english=False):
+    """统一项目区间隔，图片按容器宽度自然换行。"""
+    return "&nbsp;&nbsp;\n".join(pin(repo, name, english) for repo, name, _ in PROJECTS)
 
 
 def code_block(snippet):
@@ -90,7 +102,7 @@ def profile(english=False):
         footer = "[交流与反馈](https://github.com/haers/haers/issues)"
         entries = " · ".join(f"[{name}]({url})" for _, name, url in PROJECTS)
         animation_title = "贡献贪吃蛇"
-    cards = "\n".join(pin(repo, name, english) for repo, name, _ in PROJECTS)
+    cards = project_cards(english)
     return f'''<!-- 由 scripts/render_profile.py 生成，修改后运行生成器。 -->
 # {title}
 
@@ -140,7 +152,7 @@ def gallery():
         ("简短介绍", intro),
         ("列表介绍", detailed_intro),
         ("技术图标", skills()),
-        ("仓库卡片", "\n".join(pin(repo, name) for repo, name, _ in PROJECTS)),
+        ("仓库卡片", project_cards()),
         ("开发统计", stats_card() + "\n" + stats_card("languages")),
         ("贡献贪吃蛇", snake()),
         ("评分雷达卡", roast()),

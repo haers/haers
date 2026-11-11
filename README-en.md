@@ -9,20 +9,26 @@ Java backend developer · Desktop tools & automation · Photography
 
 <a href="https://github.com/haers/zhao-resource">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-resource&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />
-  <img src="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-resource&theme=default&title_color=0969da&icon_color=0969da" alt="zhao-resource repository card" width="400" align="top" />
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-resource&description_lines_count=3&card_width=400&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />
+  <source media="(max-width: 600px)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-resource&description_lines_count=3&card_width=400&theme=default&title_color=0969da&icon_color=0969da" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-resource&description_lines_count=3&card_width=260&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />
+  <img src="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-resource&description_lines_count=3&card_width=260&theme=default&title_color=0969da&icon_color=0969da" alt="zhao-resource repository card" />
 </picture>
-</a>
+</a>&nbsp;&nbsp;
 <a href="https://github.com/haers/xieke-releases">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=xieke-releases&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />
-  <img src="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=xieke-releases&theme=default&title_color=0969da&icon_color=0969da" alt="xieke-releases repository card" width="400" align="top" />
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=xieke-releases&description_lines_count=3&card_width=400&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />
+  <source media="(max-width: 600px)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=xieke-releases&description_lines_count=3&card_width=400&theme=default&title_color=0969da&icon_color=0969da" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=xieke-releases&description_lines_count=3&card_width=260&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />
+  <img src="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=xieke-releases&description_lines_count=3&card_width=260&theme=default&title_color=0969da&icon_color=0969da" alt="xieke-releases repository card" />
 </picture>
-</a>
+</a>&nbsp;&nbsp;
 <a href="https://github.com/haers/zhao-book-public">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-book-public&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />
-  <img src="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-book-public&theme=default&title_color=0969da&icon_color=0969da" alt="zhao-book-public repository card" width="400" align="top" />
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-book-public&description_lines_count=3&card_width=400&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />
+  <source media="(max-width: 600px)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-book-public&description_lines_count=3&card_width=400&theme=default&title_color=0969da&icon_color=0969da" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-book-public&description_lines_count=3&card_width=260&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />
+  <img src="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-book-public&description_lines_count=3&card_width=260&theme=default&title_color=0969da&icon_color=0969da" alt="zhao-book-public repository card" />
 </picture>
 </a>
 
