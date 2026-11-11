@@ -1,5 +1,8 @@
 # 👋 你好，我是小赵！
 欢迎来到我的 GitHub 主页！我是一名后端开发者，专注于构建高效的后端服务。我对后端技术充满热情，同时也对前端开发有一定的了解。我在这里分享我的项目、学习笔记和一些有趣的想法。
+
+[![GitHub 评分雷达卡](https://ghfind.com/api/card/mini/haers?variant=radar&theme=dark&lang=zh)](https://ghfind.com/u/haers?ref=badge)
+
 # 🚀 我的技能
 
 - 后端开发:  java, springboot, mysql, redis, python
