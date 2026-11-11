@@ -13,9 +13,9 @@ GALLERY = "其他一些好看的效果.md"
 STATS = "https://github-stats-extended.vercel.app"
 ROAST = "https://ghfind.com/api/card/mini/haers?variant=radar&theme=dark&lang=zh"
 PROJECTS = [
-    ("zhao-resource", "小赵资源站", "学习与资源导航，按内容分类查找。", "A directory for learning materials and useful resources.", "JavaScript", "https://kuake.netlify.app/"),
-    ("xieke-releases", "歇刻", "macOS 桌面休息提醒工具的安装包与更新入口。", "Downloads and updates for my macOS break reminder.", ("macOS · 发布与更新", "macOS · Releases"), "https://github.com/haers/xieke-releases/releases"),
-    ("zhao-book-public", "小赵书库", "书库项目的公开静态成品。", "The published static edition of my book library.", ("静态站点", "Static site"), "https://github.com/haers/zhao-book-public"),
+    ("zhao-resource", "小赵资源站", "https://kuake.netlify.app/"),
+    ("xieke-releases", "歇刻", "https://github.com/haers/xieke-releases/releases"),
+    ("zhao-book-public", "小赵书库", "https://github.com/haers/zhao-book-public"),
 ]
 
 
@@ -23,7 +23,7 @@ def picture(light, dark, alt, width=440):
     """按 GitHub 支持的 picture 语法切换主题。"""
     return f'''<picture>
   <source media="(prefers-color-scheme: dark)" srcset="{dark}" />
-  <img src="{light}" alt="{alt}" width="{width}" />
+  <img src="{light}" alt="{alt}" width="{width}" align="top" />
 </picture>'''
 
 
@@ -57,58 +57,54 @@ def roast():
     return f"[![GitHub Roast 评分卡]({ROAST})](https://ghfind.com/u/haers?ref=badge)"
 
 
-def pin():
-    """项目卡片：展示已核实的公开资源站仓库。"""
-    base = STATS + "/api/pin/?username=haers&repo=zhao-resource&hide_border=true"
-    return '<a href="https://github.com/haers/zhao-resource">\n' + picture(base + "&theme=default&title_color=0969da&icon_color=0969da", base + "&theme=github_dark&title_color=58a6ff&icon_color=58a6ff", "小赵资源站仓库卡片") + '\n</a>'
+def pin(repo="zhao-resource", name="小赵资源站", english=False):
+    """第三方仓库卡片：统一尺寸与明暗主题，点击进入对应仓库。"""
+    base = f"{STATS}/api/pin/?username=haers&repo={repo}"
+    light = base + "&theme=default&title_color=0969da&icon_color=0969da"
+    dark = base + "&theme=github_dark&title_color=58a6ff&icon_color=58a6ff"
+    alt = f"{repo} repository card" if english else f"{name}仓库卡片"
+    return f'<a href="https://github.com/haers/{repo}">\n' + picture(light, dark, alt, 400) + '\n</a>'
 
 
 def code_block(snippet):
     """折叠示例：为画廊中的实际预览提供可复制源码。"""
     language = "html" if snippet.lstrip().startswith("<") else "markdown"
-    return f"<details>\n<summary>展开查看代码</summary>\n\n```{language}\n{snippet}\n```\n\n</details>"
+    return f"<details>\n<summary>复制代码</summary>\n\n```{language}\n{snippet}\n```\n\n</details>"
 
 
 def profile(english=False):
-    """双语页面共用结构与项目来源，正文按语言输出。"""
+    """双语主页：用仓库卡片、技能图标和统计图构成主要内容。"""
     if english:
         title = "Hi, I’m Xiao Zhao / haers"
-        intro = "I build backend services with Java and explore frontend development, desktop tools, and automation.\n\nBased in China. I enjoy tinkering with software and taking photos."
-        nav = f"[中文](README.md) · **English** · [Effect gallery]({GALLERY})"
-        project_title, stack_title, activity_title = "Selected projects", "Tools I use", "Development activity"
-        footer_title, footer = "Get in touch", "Have a question about a project or an idea to discuss? [Open an issue](https://github.com/haers/haers/issues)."
-        tech = "**Backend** · Java / Spring Boot / MySQL / Redis / Python\n\n**Frontend** · Vue / Nuxt / TypeScript / Tailwind CSS\n\n**Tools** · Git / Docker / Linux"
-        animation_title, score_title = "View contribution animation", "View ghfind score card"
-        sources = "[Statistics source](https://github.com/stats-organization/github-stats-extended) · [Score details](https://ghfind.com/u/haers?ref=badge)"
+        intro = "Java backend developer · Desktop tools & automation · Photography"
+        nav = f"[中文](README.md) · **English** · [Examples]({GALLERY})"
+        project_title, stack_title, activity_title = "Projects", "Tech stack", "GitHub"
+        footer = "[Get in touch](https://github.com/haers/haers/issues)"
+        entries = " · ".join(f"[{repo}]({url})" for repo, _, url in PROJECTS)
+        animation_title = "Contribution snake"
     else:
         title = "你好，我是小赵 / haers"
-        intro = "以 Java 后端开发为主，也折腾前端、桌面工具和自动化。\n\n在中国生活，喜欢探索软件，也喜欢随手拍照。"
-        nav = f"**中文** · [English](README-en.md) · [效果画廊]({GALLERY})"
-        project_title, stack_title, activity_title = "我的作品", "常用技术", "开发记录"
-        footer_title, footer = "联系我", "项目问题、使用反馈或交流想法，欢迎 [提一个 Issue](https://github.com/haers/haers/issues)。"
-        tech = "**后端** · Java / Spring Boot / MySQL / Redis / Python\n\n**前端** · Vue / Nuxt / TypeScript / Tailwind CSS\n\n**工具** · Git / Docker / Linux"
-        animation_title, score_title = "展开贡献动画", "展开 ghfind 评分卡"
-        sources = "[统计来源](https://github.com/stats-organization/github-stats-extended) · [查看评分详情](https://ghfind.com/u/haers?ref=badge)"
-    projects = []
-    for repo, name, zh, en, technology, entry in PROJECTS:
-        label = repo if english else name
-        link_label = "Explore" if english else "查看项目"
-        technology = technology[int(english)] if isinstance(technology, tuple) else technology
-        projects.append(f"### [{label}](https://github.com/haers/{repo})\n\n{en if english else zh}\n\n{technology} · [{link_label}]({entry})")
-    # 单列卡片保留浏览顺序，图片由 GitHub 的宽度限制适配窄屏。
+        intro = "Java 后端开发 · 桌面工具与自动化 · 喜欢摄影"
+        nav = f"**中文** · [English](README-en.md) · [效果样例]({GALLERY})"
+        project_title, stack_title, activity_title = "我的作品", "常用技术", "GitHub"
+        footer = "[交流与反馈](https://github.com/haers/haers/issues)"
+        entries = " · ".join(f"[{name}]({url})" for _, name, url in PROJECTS)
+        animation_title = "贡献贪吃蛇"
+    cards = "\n".join(pin(repo, name, english) for repo, name, _ in PROJECTS)
     return f'''<!-- 由 scripts/render_profile.py 生成，修改后运行生成器。 -->
 # {title}
 
-{nav}
-
 {intro}
+
+{nav}
 
 ## {project_title}
 
-{chr(10).join(p + chr(10) for p in projects)}
-## {stack_title}
+{cards}
 
-{tech}
+{entries}
+
+## {stack_title}
 
 {skills(english)}
 
@@ -117,7 +113,7 @@ def profile(english=False):
 {stats_card(english=english)}
 {stats_card("languages", english)}
 
-{sources}
+{roast()}
 
 <details>
 <summary>{animation_title}</summary>
@@ -126,42 +122,32 @@ def profile(english=False):
 
 </details>
 
-<details>
-<summary>{score_title}</summary>
-
-{roast()}
-
-</details>
-
-## {footer_title}
-
 {footer}
 '''
 
 
 def gallery():
-    """效果画廊：统一组织预览、源码与第三方来源。"""
-    intro = "> 大家好，我是 haers，一名以 Java 开发为主的软件研发工程师。喜欢折腾工具，也喜欢手机摄影。"
+    """样例集：实际预览与对应代码成对展示。"""
+    intro = "你好，我是小赵 / haers\n\nJava 后端开发 · 桌面工具与自动化 · 喜欢摄影"
     detailed_intro = "\n".join([
-        "> 大家好，我是 haers，一名以 Java 开发为主的软件研发工程师。",
-        ">",
-        "> - 后端开发是日常，也探索前端、桌面工具和自动化。",
-        "> - 在中国生活，喜欢手机摄影。",
-        "> - 正在分享自己的资源站、歇刻和书库项目。",
+        "- 👋 大家好，我是 haers",
+        "- 💻 软件研发工程师，主要使用 Java",
+        "- 🛠 喜欢折腾前端、桌面工具和自动化",
+        "- 📷 喜欢手机摄影",
+        "- 📫 [联系我](https://github.com/haers/haers/issues)",
     ])
     sections = [
-        ("简短介绍", "用两句话说明开发方向与兴趣，适合放在主页开头。", intro, "Markdown 引用块", "https://docs.github.com/en/get-started/writing-on-github/basic-writing-and-formatting-syntax"),
-        ("详细介绍", "用简短列表补充开发方向、兴趣和项目，适合需要更多背景的主页。", detailed_intro, "Markdown 引用块", "https://docs.github.com/en/get-started/writing-on-github/basic-writing-and-formatting-syntax"),
-        ("技术图标", "精选 12 个常用技术。窄屏切换为两行，图片与主页共用。", skills(), "Skill Icons", "https://github.com/tandpfun/skill-icons"),
-        ("开发统计", "开发数据和语言分布跟随系统明暗主题。语言分布来自公开仓库，可点击来源了解统计口径。", stats_card() + "\n" + stats_card("languages"), "github-stats-extended", "https://github.com/stats-organization/github-stats-extended"),
-        ("项目卡片", "用小赵资源站演示仓库卡片，点击卡片进入仓库。", pin(), "github-stats-extended", "https://github.com/stats-organization/github-stats-extended"),
-        ("贡献动画", "贪吃蛇沿贡献格移动。主页默认折叠，按需展开。", '<details>\n<summary>展开贡献贪吃蛇</summary>\n\n' + snake() + '\n\n</details>', "Platane/snk", "https://github.com/Platane/snk"),
-        ("评分雷达卡", "查看 ghfind 的等级与维度评分。第三方和 GitHub 图片缓存可能延迟，点击卡片查看当前评分详情。", roast(), "ghfind", "https://ghfind.com/en/docs"),
+        ("简短介绍", intro),
+        ("列表介绍", detailed_intro),
+        ("技术图标", skills()),
+        ("仓库卡片", "\n".join(pin(repo, name) for repo, name, _ in PROJECTS)),
+        ("开发统计", stats_card() + "\n" + stats_card("languages")),
+        ("贡献贪吃蛇", snake()),
+        ("评分雷达卡", roast()),
     ]
-    blocks = []
-    for title, description, preview, source, url in sections:
-        blocks.append(f"## {title}\n\n{description}\n\n{preview}\n\n{code_block(preview)}\n\n来源 [{source}]({url})\n")
-    return "<!-- 由 scripts/render_profile.py 生成，修改后运行生成器。 -->\n# GitHub 主页效果画廊\n\n[返回中文主页](README.md) · [English](README-en.md)\n\n先看效果，再展开代码。示例使用 haers 的公开资料，复制时替换用户名和仓库名。\n\n" + "\n".join(blocks)
+    blocks = [f"## {title}\n\n{preview}\n\n{code_block(preview)}\n" for title, preview in sections]
+    sources = "[Skill Icons](https://github.com/tandpfun/skill-icons) · [GitHub Stats Extended](https://github.com/stats-organization/github-stats-extended) · [snk](https://github.com/Platane/snk) · [ghfind](https://ghfind.com)"
+    return "<!-- 由 scripts/render_profile.py 生成，修改后运行生成器。 -->\n# GitHub 主页样例\n\n[返回主页](README.md) · [English](README-en.md)\n\n" + "\n".join(blocks) + "\n---\n\n" + sources + "\n"
 
 
 def validate(path, text):
