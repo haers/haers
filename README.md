@@ -1,52 +1,75 @@
-# 👋 你好，我是小赵！
-欢迎来到我的 GitHub 主页！我是一名后端开发者，专注于构建高效的后端服务。我对后端技术充满热情，同时也对前端开发有一定的了解。我在这里分享我的项目、学习笔记和一些有趣的想法。
+<!-- 由 scripts/render_profile.py 生成，修改后运行生成器。 -->
+# 你好，我是小赵 / haers
+
+**中文** · [English](README-en.md) · [效果画廊](其他一些好看的效果.md)
+
+以 Java 后端开发为主，也折腾前端、桌面工具和自动化。
+
+在中国生活，喜欢探索软件，也喜欢随手拍照。
+
+## 我的作品
+
+### [小赵资源站](https://github.com/haers/zhao-resource)
+
+学习与资源导航，按内容分类查找。
+
+JavaScript · [查看项目](https://kuake.netlify.app/)
+
+### [歇刻](https://github.com/haers/xieke-releases)
+
+macOS 桌面休息提醒工具的安装包与更新入口。
+
+macOS · 发布与更新 · [查看项目](https://github.com/haers/xieke-releases/releases)
+
+### [小赵书库](https://github.com/haers/zhao-book-public)
+
+书库项目的公开静态成品。
+
+静态站点 · [查看项目](https://github.com/haers/zhao-book-public)
+
+## 常用技术
+
+**后端** · Java / Spring Boot / MySQL / Redis / Python
+
+**前端** · Vue / Nuxt / TypeScript / Tailwind CSS
+
+**工具** · Git / Docker / Linux
+
+<picture>
+  <source media="(max-width: 600px)" srcset="static/svg/skillWap.svg" />
+  <img src="static/svg/skillPc.svg" alt="常用技术 / Java, Spring, MySQL, Redis, Python, Vue, Nuxt, TypeScript, Tailwind CSS, Git, Docker, Linux" width="600" />
+</picture>
+
+## 开发记录
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=haers&show_icons=true&hide_border=true&title_color=58a6ff&icon_color=58a6ff&theme=github_dark" />
+  <img src="https://github-stats-extended.vercel.app/api?username=haers&show_icons=true&hide_border=true&title_color=58a6ff&icon_color=58a6ff&theme=default" alt="haers 的公开 GitHub 开发统计" width="400" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=haers&layout=compact&hide_border=true&title_color=58a6ff&icon_color=58a6ff&theme=github_dark" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=haers&layout=compact&hide_border=true&title_color=58a6ff&icon_color=58a6ff&theme=default" alt="haers 的公开仓库语言分布" width="400" />
+</picture>
+
+[统计来源](https://github.com/stats-organization/github-stats-extended) · [查看评分详情](https://ghfind.com/u/haers?ref=badge)
+
+<details>
+<summary>展开贡献动画</summary>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="github-contribution-snake/github-contribution-grid-snake-dark.svg" />
+  <img src="github-contribution-snake/github-contribution-grid-snake.svg" alt="haers 的 GitHub 贡献贪吃蛇动画" width="850" />
+</picture>
+
+</details>
+
+<details>
+<summary>展开 ghfind 评分卡</summary>
 
 [![GitHub Roast 评分卡](https://ghfind.com/api/card/mini/haers?variant=radar&theme=dark&lang=zh)](https://ghfind.com/u/haers?ref=badge)
 
-# 🚀 我的技能
+</details>
 
-- 后端开发:  java, springboot, mysql, redis, python
-- 前端开发:  HTML, CSS, JavaScript ,Vue 3, Vue Router, Pinia, Element UI, nuxt,PrimeVue, tailwind
-- 工具与环境: idea , vscode, Git, docker
-- 其他技能: 数据抓取
+## 联系我
 
-
-# 📝 博客与文章
-
-我偶尔会写一些技术文章，分享学习和经验（有公开链接时再贴在这里）。
-
-感谢你花时间访问我的 GitHub 主页！如果喜欢我的项目，欢迎 ⭐️ 或关注。
-
- [![My Skills](https://skillicons.dev/icons?i=git,nginx,cloudflare,postman,vscode,linux,windows,vue,vite,nuxt,twitter,redis,py,pycharm,pnpm,pinia,docker,idea,maven,mysql,md,jquery,kafka,java,js,html,hibernate,eclipse,github,css,vim)](https://skillicons.dev)
-
-
-
-# 技能图
-
-| <a href="https://github.com/stats-organization/github-stats-extended"><img align="center" src="https://github-stats-extended.vercel.app/api?username=haers&show_icons=true&include_all_commits=true&count_private=true&theme=buefy&hide_border=true&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR" alt="haers GitHub stats" /></a> | <a href="https://github.com/stats-organization/github-stats-extended"><img align="center" src="https://github-stats-extended.vercel.app/api/top-langs/?username=haers&layout=compact&theme=buefy&hide_border=true" alt="haers top languages" /></a> |
-| ------------- | ------------- |
-
-
-
-
-  <!-- snake contribution -->
-   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="github-contribution-snake/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="github-contribution-snake/github-contribution-grid-snake.svg" />
-    <img alt="github-snake" src="github-contribution-snake/github-contribution-grid-snake-dark.svg" />
-  </picture>
-
-
-# profile 页面效果
-这里面所有的效果，都可以参考我的源码。
-
-其他的一些效果，在另外一个文件中 
-
-[查看其他效果](./其他一些好看的效果.md)
-
-
-# 联系我
-
-如果你有任何问题或想与我合作，可以在当前项目提 issue
-
-
+项目问题、使用反馈或交流想法，欢迎 [提一个 Issue](https://github.com/haers/haers/issues)。
