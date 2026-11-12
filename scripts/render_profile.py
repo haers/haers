@@ -87,7 +87,7 @@ def profile(english=False):
         title = "👋 Hi, I’m Xiao Zhao!"
         intro = "I’m a backend developer working mainly with Java. I also enjoy building frontend projects, desktop tools, and automation.\n\nHere I share things I build, notes from learning, and a little of my curiosity about software."
         nav = f"[中文](README.md) · **English** · [README examples]({GALLERY})"
-        skill_title, project_title, stats_title = "🚀 Skills", "🛠 Projects", "📊 GitHub stats"
+        skill_title, project_title, stats_title = "🚀 Skills", "💻 Projects", "📊 GitHub stats"
         skill_text = "- **Backend** · Java / Spring Boot / MySQL / Redis / Python\n- **Frontend** · Vue / Nuxt / TypeScript / Tailwind CSS\n- **Tools** · Git / Docker / Linux"
         activity_title, contact_title = "🐍 Contributions", "📫 Get in touch"
         contact = "Questions, feedback, or ideas? [Open an issue](https://github.com/haers/haers/issues)."
@@ -96,7 +96,7 @@ def profile(english=False):
         title = "👋 你好，我是小赵！"
         intro = "我是一名以 Java 为主的后端开发者，也喜欢折腾前端、桌面工具和自动化。\n\n在这里分享自己的项目、学习笔记和一些有趣的想法，平时也喜欢拿手机拍拍照。"
         nav = f"**中文** · [English](README-en.md) · [效果样例]({GALLERY})"
-        skill_title, project_title, stats_title = "🚀 我的技能", "🛠 我的项目", "📊 GitHub 数据"
+        skill_title, project_title, stats_title = "🚀 我的技能", "💻 我的项目", "📊 GitHub 数据"
         skill_text = "- **后端开发** · Java / Spring Boot / MySQL / Redis / Python\n- **前端开发** · Vue / Nuxt / TypeScript / Tailwind CSS\n- **工具与环境** · Git / Docker / Linux"
         activity_title, contact_title = "🐍 贡献记录", "📫 联系与交流"
         contact = "如果你有项目问题、使用反馈，或者想交流一些有趣的想法，欢迎 [提一个 Issue](https://github.com/haers/haers/issues)。"
@@ -222,7 +222,7 @@ def gallery():
     listed_intro = "\n".join([
         "- 👋 大家好，我是 haers",
         "- 💻 软件研发工程师，主要使用 Java",
-        "- 🛠 喜欢折腾前端、桌面工具和自动化",
+        "- 🔧 喜欢折腾前端、桌面工具和自动化",
         "- 📷 喜欢手机摄影",
         "- 📫 [联系我](https://github.com/haers/haers/issues)",
     ])

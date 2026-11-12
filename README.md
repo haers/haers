@@ -17,7 +17,7 @@
 
 <img src="static/svg/skillWap.svg" alt="Java, Spring, MySQL, Redis, Python, Vue, Nuxt, TypeScript, Tailwind CSS, Git, Docker, Linux" width="340" />
 
-## 🛠 我的项目
+## 💻 我的项目
 
 <p>
 <a href="https://github.com/haers/zhao-resource"><picture>  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-resource&description_lines_count=3&hide_border=true&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />  <img src="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-resource&description_lines_count=3&hide_border=true&theme=default&title_color=0969da&icon_color=0969da" alt="小赵资源站仓库卡片" width="390" align="top" /></picture></a>
