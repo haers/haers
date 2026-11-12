@@ -136,19 +136,82 @@ def profile(english=False):
 '''
 
 
+def effect_workflow(kind):
+    """提供独立可运行的样例工作流，复制者无需安装本仓生成脚本。"""
+    if kind == "3d":
+        action = """      - uses: yoshi389111/github-profile-3d-contrib@7d95e7d4cdc028dd1e1cbd957d65f35efb12ae39
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}"""
+        sources = ["profile-3d-contrib/profile-green.svg", "profile-3d-contrib/profile-night-green.svg"]
+        targets = ["static/effects/profile-green.svg", "static/effects/profile-night-green.svg"]
+    else:
+        action = """      - uses: abozanona/pacman-contribution-graph@70945878b1118303b37b88060fc7145e1a57d7b1
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          games: pacman"""
+        sources = ["dist/pacman-contribution-graph.svg", "dist/pacman-contribution-graph-dark.svg"]
+        targets = ["static/effects/pacman.svg", "static/effects/pacman-dark.svg"]
+    copies = "\n".join(f"          cp {source} {target}" for source, target in zip(sources, targets))
+    paths = " ".join(targets)
+    return f'''name: generate-{kind}-contribution
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 0 * * *'
+  push:
+    branches: [main]
+permissions:
+  contents: write
+concurrency:
+  group: generate-{kind}
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+{action}
+      - name: Collect and publish
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p static/effects
+{copies}
+          python3 - <<'PYTHON'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          for name in {targets!r}:
+              path = Path(name)
+              text = '\\n'.join(line.rstrip() for line in path.read_text().splitlines()) + '\\n'
+              ET.fromstring(text)
+              path.write_text(text)
+          PYTHON
+          git add -- {paths}
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git diff --cached --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore: update contribution graph'
+          git push --dry-run origin HEAD:main
+          git push origin HEAD:main'''
+
+
 def advanced_examples():
     """已生成的贡献效果使用真实产物，并附上可直接复制的工作流。"""
-    workflow = ROOT / ".github/workflows/effects.yml"
     sections = []
     examples = [
         ("3D 贡献日历", "static/effects/profile-green.svg", "static/effects/profile-night-green.svg"),
         ("吃豆人贡献动画", "static/effects/pacman.svg", "static/effects/pacman-dark.svg"),
     ]
-    for title, light, dark in examples:
+    for index, (title, light, dark) in enumerate(examples):
         if (ROOT / light).is_file() and (ROOT / dark).is_file():
             preview = picture(light, dark, f"haers 的{title}", 850)
             content = f"## {title}\n\n{preview}\n\n{code_block(preview)}\n"
-            content += "\n### GitHub Actions\n\n" + code_block(workflow.read_text().rstrip(), "yaml") + "\n"
+            content += "\n### GitHub Actions\n\n" + code_block(effect_workflow("3d" if index == 0 else "pacman"), "yaml") + "\n"
             sections.append(content)
     return sections
 
@@ -196,23 +259,33 @@ def validate(path, text):
 
 
 def validate_workflow():
-    """限制自动生成任务的暂存范围，防止整目录发布覆盖主页内容。"""
-    workflow = (ROOT / ".github/workflows/snk.yml").read_text()
-    expected = {
-        "github-contribution-snake/github-contribution-grid-snake.svg",
-        "github-contribution-snake/github-contribution-grid-snake-dark.svg",
+    """两个自动生成任务都只暂存明确的公开产物。"""
+    scopes = {
+        'snk.yml': {
+            'github-contribution-snake/github-contribution-grid-snake.svg',
+            'github-contribution-snake/github-contribution-grid-snake-dark.svg',
+        },
+        'effects.yml': {
+            'static/effects/profile-green.svg',
+            'static/effects/profile-night-green.svg',
+            'static/effects/pacman.svg',
+            'static/effects/pacman-dark.svg',
+            GALLERY,
+        },
     }
-    commands = [line.strip() for line in workflow.splitlines()]
-    staging = [line for line in commands if line.startswith("git add ")]
-    assert len(staging) == 1
-    assert set(shlex.split(staging[0])[3:]) == expected
-    assert "ghaction-github-pages" not in workflow
-    assert "--force" not in workflow
-    assert "git push --dry-run origin HEAD:main" in commands
-    assert "cancel-in-progress: false" in workflow
-    for path in expected:
-        root = ET.parse(ROOT / path).getroot()
-        assert root.tag == "{http://www.w3.org/2000/svg}svg"
+    for name, expected in scopes.items():
+        workflow = (ROOT / '.github/workflows' / name).read_text()
+        commands = [line.strip() for line in workflow.splitlines()]
+        staging = [line for line in commands if line.startswith('git add ')]
+        assert len(staging) == 1, name
+        assert set(shlex.split(staging[0])[3:]) == expected, name
+        assert 'ghaction-github-pages' not in workflow
+        assert '--force' not in workflow
+        assert 'git push --dry-run origin HEAD:main' in commands
+        assert 'cancel-in-progress: false' in workflow
+    for name in scopes['snk.yml']:
+        root = ET.parse(ROOT / name).getroot()
+        assert root.tag == '{http://www.w3.org/2000/svg}svg'
 
 
 def main():
@@ -231,6 +304,9 @@ def main():
     for name in ("skillPc.svg", "skillWap.svg"):
         root = ET.parse(ROOT / "static/svg" / name).getroot()
         assert root.tag == "{http://www.w3.org/2000/svg}svg"
+    for path in (ROOT / 'static/effects').glob('*.svg'):
+        root = ET.parse(path).getroot()
+        assert root.tag == '{http://www.w3.org/2000/svg}svg', str(path)
     validate_workflow()
     print("通过：三份 Markdown 同源生成、链接、图片说明、标题层级、SVG 与工作流暂存范围")
 
