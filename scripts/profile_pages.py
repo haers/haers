@@ -84,7 +84,7 @@ def profile(english=False):
     if english:
         title = "👋 Hi, I’m Xiao Zhao!"
         intro = "I’m a backend developer working mainly with Java. I also enjoy building frontend projects, desktop tools, and automation.\n\nHere I share things I build, notes from learning, and a little of my curiosity about software."
-        nav = f"[中文](README.md) · **English** · [Effect library]({GALLERY})"
+        nav = f"[切换到中文](README.md) · **English** · [Browse profile examples]({GALLERY})"
         skill_title, project_title, stats_title = "🚀 Skills", "💻 Projects", "📊 GitHub stats"
         skill_text = "- **Backend** · Java / Spring Boot / MySQL / Redis / Python\n- **Frontend** · Vue / Nuxt / TypeScript / Tailwind CSS\n- **Tools** · Git / Docker / Linux"
         activity_title, contact_title = "👾 Contributions", "📫 Get in touch"
@@ -92,7 +92,7 @@ def profile(english=False):
     else:
         title = "👋 你好，我是小赵！"
         intro = "我是一名以 Java 为主的后端开发者，也喜欢折腾前端、桌面工具和自动化。\n\n在这里分享自己的项目、学习笔记和一些有趣的想法，平时也喜欢拿手机拍拍照。"
-        nav = f"**中文** · [English](README-en.md) · [效果库]({GALLERY})"
+        nav = f"**中文** · [Switch to English](README-en.md) · [浏览主页效果样例]({GALLERY})"
         skill_title, project_title, stats_title = "🚀 我的技能", "💻 我的项目", "📊 GitHub 数据"
         skill_text = "- **后端开发** · Java / Spring Boot / MySQL / Redis / Python\n- **前端开发** · Vue / Nuxt / TypeScript / Tailwind CSS\n- **工具与环境** · Git / Docker / Linux"
         activity_title, contact_title = "👾 贡献记录", "📫 联系与交流"

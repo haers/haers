@@ -2,9 +2,9 @@
 
 # 贡献动画
 
-[效果库](../README.md) · [个人主页](../../README.md) · [查看源码](https://github.com/haers/haers/blob/main/examples/contributions/README.md?plain=1)
+[返回效果库总览](../README.md) · [查看小赵的个人主页](../../README.md) · [查看本页 Markdown 源码](https://github.com/haers/haers/blob/main/examples/contributions/README.md?plain=1)
 
-[街机动画](#街机动画) · [3D 日历](#3d-日历) · [贡献贪吃蛇](#贡献贪吃蛇)
+[跳到街机动画样例](#街机动画) · [跳到 3D 日历样例](#3d-日历) · [跳到贪吃蛇样例](#贡献贪吃蛇)
 
 示例账号 [haers](https://github.com/haers)。
 
@@ -119,4 +119,4 @@
 
 ---
 
-[街机动画](https://github.com/abozanona/pacman-contribution-graph) · [3D 日历](https://github.com/yoshi389111/github-profile-3d-contrib) · [snk](https://github.com/Platane/snk) · [街机与日历工作流](../../.github/workflows/effects.yml) · [贪吃蛇工作流](../../.github/workflows/snk.yml)
+[查看街机动画来源项目](https://github.com/abozanona/pacman-contribution-graph) · [查看 3D 日历来源项目](https://github.com/yoshi389111/github-profile-3d-contrib) · [查看贪吃蛇来源项目 snk](https://github.com/Platane/snk) · [查看街机与日历生成工作流](../../.github/workflows/effects.yml) · [查看贪吃蛇生成工作流](../../.github/workflows/snk.yml)

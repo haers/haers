@@ -2,7 +2,7 @@
 
 # 个人介绍与技能
 
-[效果库](../README.md) · [个人主页](../../README.md) · [查看源码](https://github.com/haers/haers/blob/main/examples/profile/README.md?plain=1)
+[返回效果库总览](../README.md) · [查看小赵的个人主页](../../README.md) · [查看本页 Markdown 源码](https://github.com/haers/haers/blob/main/examples/profile/README.md?plain=1)
 
 ### 简短介绍
 
@@ -15,7 +15,7 @@ Java 后端开发 · 桌面工具与自动化 · 喜欢摄影
 - 👋 大家好，我是 haers
 - 💻 主要使用 Java
 - 📷 喜欢摄影
-- 📫 [联系我](https://github.com/haers/haers/issues)
+- 📫 [通过 GitHub Issue 联系我](https://github.com/haers/haers/issues)
 
 ### 六列技能图标
 
@@ -27,4 +27,4 @@ Java 后端开发 · 桌面工具与自动化 · 喜欢摄影
 
 ---
 
-[Skill Icons](https://github.com/tandpfun/skill-icons)
+[查看技能图标来源项目 Skill Icons](https://github.com/tandpfun/skill-icons)

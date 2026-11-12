@@ -6,7 +6,7 @@ I’m a backend developer working mainly with Java. I also enjoy building fronte
 
 Here I share things I build, notes from learning, and a little of my curiosity about software.
 
-[中文](README.md) · **English** · [Effect library](examples/README.md)
+[切换到中文](README.md) · **English** · [Browse profile examples](examples/README.md)
 
 <p>
 <a href="https://kuake.netlify.app/"><img src="static/links/resource-en.svg" alt="Browse resources" height="20" /></a>

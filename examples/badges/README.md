@@ -2,9 +2,9 @@
 
 # 徽章与名片
 
-[效果库](../README.md) · [个人主页](../../README.md) · [查看源码](https://github.com/haers/haers/blob/main/examples/badges/README.md?plain=1)
+[返回效果库总览](../README.md) · [查看小赵的个人主页](../../README.md) · [查看本页 Markdown 源码](https://github.com/haers/haers/blob/main/examples/badges/README.md?plain=1)
 
-[ghfind](#ghfind) · [Shields](#shields)
+[跳到 ghfind 名片样例](#ghfind) · [跳到 Shields 徽章样例](#shields)
 
 ## ghfind
 
@@ -73,4 +73,4 @@
 
 ---
 
-[ghfind](https://ghfind.com/en/docs) · [Shields](https://shields.io) · [badge-maker](https://www.npmjs.com/package/badge-maker)
+[查看 ghfind 名片官方文档](https://ghfind.com/en/docs) · [访问 Shields 徽章制作网站](https://shields.io) · [查看徽章生成工具 badge-maker](https://www.npmjs.com/package/badge-maker)

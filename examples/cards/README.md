@@ -2,9 +2,9 @@
 
 # 统计与项目卡片
 
-[效果库](../README.md) · [个人主页](../../README.md) · [查看源码](https://github.com/haers/haers/blob/main/examples/cards/README.md?plain=1)
+[返回效果库总览](../README.md) · [查看小赵的个人主页](../../README.md) · [查看本页 Markdown 源码](https://github.com/haers/haers/blob/main/examples/cards/README.md?plain=1)
 
-[开发统计](#开发统计) · [语言分布](#语言分布) · [项目卡片](#项目卡片)
+[跳到开发统计样例](#开发统计) · [跳到语言分布样例](#语言分布) · [跳到项目卡片样例](#项目卡片)
 
 示例账号 [DenverCoder1](https://github.com/DenverCoder1)。
 
@@ -54,4 +54,4 @@
 
 ---
 
-[GitHub Stats Extended](https://github.com/stats-organization/github-stats-extended)
+[查看统计卡片来源项目 GitHub Stats Extended](https://github.com/stats-organization/github-stats-extended)

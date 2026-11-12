@@ -6,7 +6,7 @@
 
 在这里分享自己的项目、学习笔记和一些有趣的想法，平时也喜欢拿手机拍拍照。
 
-**中文** · [English](README-en.md) · [效果库](examples/README.md)
+**中文** · [Switch to English](README-en.md) · [浏览主页效果样例](examples/README.md)
 
 <p>
 <a href="https://kuake.netlify.app/"><img src="static/links/resource-zh.svg" alt="资源站 · 在线浏览" height="20" /></a>
