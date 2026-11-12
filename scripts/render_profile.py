@@ -21,6 +21,8 @@ def validate(name, text):
     assert 'undefined' not in visible
     assert not re.search(r'\]\(\s*\)', visible)
     assert '<details' not in visible, f'{name} 的内容应直接展开'
+    if name.startswith('examples/'):
+        assert '```' not in text, f'{name} 预览页不应展示代码块'
     for tag in re.findall(r'<img\b[^>]*>', visible):
         assert re.search(r'alt="[^"]+"', tag), f'{name} 图片缺少说明'
     links = re.findall(r'\]\(([^)]+)\)', visible)

@@ -22,10 +22,7 @@ CALENDAR_STYLES = {
     'night-rainbow': '夜间彩虹',
     'gitblock': '积木',
 }
-DYNAMIC_PAGES = (
-    'examples/contributions/arcade.md',
-    'examples/contributions/3d-calendar.md',
-)
+DYNAMIC_PAGES = ('examples/contributions/README.md',)
 
 
 def effect_sources():

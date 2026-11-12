@@ -68,13 +68,6 @@ def project_cards(english=False):
     return pair(*(pin(repo, name, english) for repo, name, _ in PROJECTS[:2]))
 
 
-def code_block(snippet, language=None):
-    """样例代码直接展开，内容与上方预览一致。"""
-    if language is None:
-        language = "html" if snippet.lstrip().startswith("<") else "markdown"
-    return f"```{language}\n{snippet}\n```"
-
-
 def project_entries(english=False):
     """项目入口：使用本地 Shields 徽章说明访问、下载与仓库去向。"""
     language = 'en' if english else 'zh'
