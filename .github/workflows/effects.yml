@@ -23,7 +23,7 @@ jobs:
     timeout-minutes: 12
     steps:
       - name: 检出主页源码
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: main
 
@@ -45,11 +45,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p static/effects
-          cp profile-3d-contrib/profile-green.svg static/effects/profile-green.svg
-          cp profile-3d-contrib/profile-night-green.svg static/effects/profile-night-green.svg
-          cp dist/pacman-contribution-graph.svg static/effects/pacman.svg
-          cp dist/pacman-contribution-graph-dark.svg static/effects/pacman-dark.svg
+          python3 scripts/prepare_effects.py
           python3 scripts/render_profile.py
           python3 scripts/render_profile.py --check
 
