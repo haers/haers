@@ -13,12 +13,76 @@
 ![haers 的绿色日历](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-green.svg)
 ```
 
+## 绿色动画
+
+![haers 的绿色动画](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-green-animate.svg)
+
+```markdown
+![haers 的绿色动画](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-green-animate.svg)
+```
+
+## 四季配色
+
+![haers 的四季配色](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-season.svg)
+
+```markdown
+![haers 的四季配色](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-season.svg)
+```
+
+## 四季动画
+
+![haers 的四季动画](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-season-animate.svg)
+
+```markdown
+![haers 的四季动画](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-season-animate.svg)
+```
+
+## 南半球四季
+
+![haers 的南半球四季](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-south-season.svg)
+
+```markdown
+![haers 的南半球四季](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-south-season.svg)
+```
+
+## 南半球四季动画
+
+![haers 的南半球四季动画](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-south-season-animate.svg)
+
+```markdown
+![haers 的南半球四季动画](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-south-season-animate.svg)
+```
+
+## 夜景
+
+![haers 的夜景](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-night-view.svg)
+
+```markdown
+![haers 的夜景](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-night-view.svg)
+```
+
 ## 夜间绿色
 
 ![haers 的夜间绿色](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-night-green.svg)
 
 ```markdown
 ![haers 的夜间绿色](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-night-green.svg)
+```
+
+## 夜间彩虹
+
+![haers 的夜间彩虹](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-night-rainbow.svg)
+
+```markdown
+![haers 的夜间彩虹](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-night-rainbow.svg)
+```
+
+## 积木
+
+![haers 的积木](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-gitblock.svg)
+
+```markdown
+![haers 的积木](https://raw.githubusercontent.com/haers/haers/main/static/effects/profile-gitblock.svg)
 ```
 
 ## 工作流
