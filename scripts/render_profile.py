@@ -81,6 +81,17 @@ def code_block(snippet, language=None):
     return f"```{language}\n{snippet}\n```"
 
 
+def project_entries(english=False):
+    """项目入口：使用本地 Shields 徽章说明访问、下载与仓库去向。"""
+    language = 'en' if english else 'zh'
+    labels = ('Browse resources', 'Download Xieke for macOS', 'View book repository') if english else ('资源站 · 在线浏览', '歇刻 · macOS 下载', '书库 · 查看仓库')
+    entries = []
+    for (_, _, url), name, label in zip(PROJECTS, ('resource', 'xieke', 'book'), labels):
+        image = f'<img src="static/links/{name}-{language}.svg" alt="{label}" height="20" />'
+        entries.append(f'<a href="{url}">{image}</a>')
+    return '<p>\n' + '\n'.join(entries) + '\n</p>'
+
+
 def profile(english=False):
     """恢复介绍、技能、作品、统计、贡献与联系的原版分块。"""
     if english:
@@ -89,18 +100,16 @@ def profile(english=False):
         nav = f"[中文](README.md) · **English** · [README examples]({GALLERY})"
         skill_title, project_title, stats_title = "🚀 Skills", "💻 Projects", "📊 GitHub stats"
         skill_text = "- **Backend** · Java / Spring Boot / MySQL / Redis / Python\n- **Frontend** · Vue / Nuxt / TypeScript / Tailwind CSS\n- **Tools** · Git / Docker / Linux"
-        activity_title, contact_title = "🐍 Contributions", "📫 Get in touch"
+        activity_title, contact_title = "👾 Contributions", "📫 Get in touch"
         contact = "Questions, feedback, or ideas? [Open an issue](https://github.com/haers/haers/issues)."
-        entries = "[Resource directory](https://kuake.netlify.app/) · [Download Xieke](https://github.com/haers/xieke-releases/releases) · [Book library](https://github.com/haers/zhao-book-public)"
     else:
         title = "👋 你好，我是小赵！"
         intro = "我是一名以 Java 为主的后端开发者，也喜欢折腾前端、桌面工具和自动化。\n\n在这里分享自己的项目、学习笔记和一些有趣的想法，平时也喜欢拿手机拍拍照。"
         nav = f"**中文** · [English](README-en.md) · [效果样例]({GALLERY})"
         skill_title, project_title, stats_title = "🚀 我的技能", "💻 我的项目", "📊 GitHub 数据"
         skill_text = "- **后端开发** · Java / Spring Boot / MySQL / Redis / Python\n- **前端开发** · Vue / Nuxt / TypeScript / Tailwind CSS\n- **工具与环境** · Git / Docker / Linux"
-        activity_title, contact_title = "🐍 贡献记录", "📫 联系与交流"
+        activity_title, contact_title = "👾 贡献记录", "📫 联系与交流"
         contact = "如果你有项目问题、使用反馈，或者想交流一些有趣的想法，欢迎 [提一个 Issue](https://github.com/haers/haers/issues)。"
-        entries = "[逛逛资源站](https://kuake.netlify.app/) · [下载歇刻](https://github.com/haers/xieke-releases/releases) · [小赵书库](https://github.com/haers/zhao-book-public)"
     return f'''<!-- 由 scripts/render_profile.py 生成，修改后运行生成器。 -->
 # {title}
 
@@ -120,7 +129,7 @@ def profile(english=False):
 
 {project_cards(english)}
 
-{entries}
+{project_entries(english)}
 
 ## {stats_title}
 
@@ -128,7 +137,7 @@ def profile(english=False):
 
 ## {activity_title}
 
-{snake(english)}
+{picture("static/effects/pacman.svg", "static/effects/pacman-dark.svg", "haers Pac-Man contribution animation" if english else "haers 的吃豆人贡献动画", 850)}
 
 ## {contact_title}
 
@@ -304,9 +313,10 @@ def main():
     for name in ("skillPc.svg", "skillWap.svg"):
         root = ET.parse(ROOT / "static/svg" / name).getroot()
         assert root.tag == "{http://www.w3.org/2000/svg}svg"
-    for path in (ROOT / 'static/effects').glob('*.svg'):
-        root = ET.parse(path).getroot()
-        assert root.tag == '{http://www.w3.org/2000/svg}svg', str(path)
+    for folder in ('static/effects', 'static/links'):
+        for path in (ROOT / folder).glob('*.svg'):
+            root = ET.parse(path).getroot()
+            assert root.tag == '{http://www.w3.org/2000/svg}svg', str(path)
     validate_workflow()
     print("通过：三份 Markdown 同源生成、链接、图片说明、标题层级、SVG 与工作流暂存范围")
 

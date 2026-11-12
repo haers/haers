@@ -24,7 +24,11 @@
 <a href="https://github.com/haers/xieke-releases"><picture>  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=xieke-releases&description_lines_count=3&hide_border=true&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />  <img src="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=xieke-releases&description_lines_count=3&hide_border=true&theme=default&title_color=0969da&icon_color=0969da" alt="歇刻仓库卡片" width="390" align="top" /></picture></a>
 </p>
 
-[逛逛资源站](https://kuake.netlify.app/) · [下载歇刻](https://github.com/haers/xieke-releases/releases) · [小赵书库](https://github.com/haers/zhao-book-public)
+<p>
+<a href="https://kuake.netlify.app/"><img src="static/links/resource-zh.svg" alt="资源站 · 在线浏览" height="20" /></a>
+<a href="https://github.com/haers/xieke-releases/releases"><img src="static/links/xieke-zh.svg" alt="歇刻 · macOS 下载" height="20" /></a>
+<a href="https://github.com/haers/zhao-book-public"><img src="static/links/book-zh.svg" alt="书库 · 查看仓库" height="20" /></a>
+</p>
 
 ## 📊 GitHub 数据
 
@@ -39,11 +43,11 @@
 </picture>
 </p>
 
-## 🐍 贡献记录
+## 👾 贡献记录
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="github-contribution-snake/github-contribution-grid-snake-dark.svg" />
-  <img src="github-contribution-snake/github-contribution-grid-snake.svg" alt="haers 的 GitHub 贡献贪吃蛇动画" width="850" align="top" />
+  <source media="(prefers-color-scheme: dark)" srcset="static/effects/pacman-dark.svg" />
+  <img src="static/effects/pacman.svg" alt="haers 的吃豆人贡献动画" width="850" align="top" />
 </picture>
 
 ## 📫 联系与交流
