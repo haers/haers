@@ -111,6 +111,8 @@ def profile(english=False):
 
 {nav}
 
+{project_entries(english)}
+
 {roast()}
 
 ## {skill_title}
@@ -122,8 +124,6 @@ def profile(english=False):
 ## {project_title}
 
 {project_cards(english)}
-
-{project_entries(english)}
 
 ## {stats_title}
 

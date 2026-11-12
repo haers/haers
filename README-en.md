@@ -7,6 +7,12 @@ Here I share things I build, notes from learning, and a little of my curiosity a
 
 [中文](README.md) · **English** · [Effect library](examples/README.md)
 
+<p>
+<a href="https://kuake.netlify.app/"><img src="static/links/resource-en.svg" alt="Browse resources" height="20" /></a>
+<a href="https://github.com/haers/xieke-releases/releases"><img src="static/links/xieke-en.svg" alt="Download Xieke for macOS" height="20" /></a>
+<a href="https://github.com/haers/zhao-book-public"><img src="static/links/book-en.svg" alt="View book repository" height="20" /></a>
+</p>
+
 [![GitHub Roast 评分卡](https://ghfind.com/api/card/mini/haers?variant=radar&theme=dark&lang=zh)](https://ghfind.com/u/haers?ref=badge)
 
 ## 🚀 Skills
@@ -22,12 +28,6 @@ Here I share things I build, notes from learning, and a little of my curiosity a
 <p>
 <a href="https://github.com/haers/zhao-resource"><picture>  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-resource&description_lines_count=3&hide_border=true&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />  <img src="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-resource&description_lines_count=3&hide_border=true&theme=default&title_color=0969da&icon_color=0969da" alt="zhao-resource repository card" width="390" align="top" /></picture></a>
 <a href="https://github.com/haers/xieke-releases"><picture>  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=xieke-releases&description_lines_count=3&hide_border=true&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />  <img src="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=xieke-releases&description_lines_count=3&hide_border=true&theme=default&title_color=0969da&icon_color=0969da" alt="xieke-releases repository card" width="390" align="top" /></picture></a>
-</p>
-
-<p>
-<a href="https://kuake.netlify.app/"><img src="static/links/resource-en.svg" alt="Browse resources" height="20" /></a>
-<a href="https://github.com/haers/xieke-releases/releases"><img src="static/links/xieke-en.svg" alt="Download Xieke for macOS" height="20" /></a>
-<a href="https://github.com/haers/zhao-book-public"><img src="static/links/book-en.svg" alt="View book repository" height="20" /></a>
 </p>
 
 ## 📊 GitHub stats
