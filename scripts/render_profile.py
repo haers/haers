@@ -30,7 +30,7 @@ def picture(light, dark, alt, width=440):
 def stats_card(kind="stats", english=False):
     """开发统计：使用同一配色生成双语替代文本。"""
     path = "/api?username=haers&show_icons=true" if kind == "stats" else "/api/top-langs/?username=haers&layout=compact"
-    url = STATS + path + "&hide_border=true"
+    url = STATS + path + "&hide_border=true&disable_animations=true"
     alt = "Public GitHub development statistics for haers" if kind == "stats" else "Languages used in haers public repositories"
     if not english:
         alt = "haers 的公开 GitHub 开发统计" if kind == "stats" else "haers 的公开仓库语言分布"
@@ -38,12 +38,9 @@ def stats_card(kind="stats", english=False):
 
 
 def skills(english=False):
-    """技术栈：桌面单行、窄屏双行共用本地图片。"""
-    alt = "Frequently used technologies" if english else "常用技术"
-    return f'''<picture>
-  <source media="(max-width: 600px)" srcset="static/svg/skillWap.svg" />
-  <img src="static/svg/skillPc.svg" alt="{alt} / Java, Spring, MySQL, Redis, Python, Vue, Nuxt, TypeScript, Tailwind CSS, Git, Docker, Linux" width="600" />
-</picture>'''
+    """技术图标：每行六个，沿用仓库内的本地 SVG。"""
+    alt = "Java, Spring, MySQL, Redis, Python, Vue, Nuxt, TypeScript, Tailwind CSS, Git, Docker, Linux"
+    return f'<img src="static/svg/skillWap.svg" alt="{alt}" width="340" />'
 
 
 def snake(english=False):
@@ -58,51 +55,52 @@ def roast():
 
 
 def pin(repo="zhao-resource", name="小赵资源站", english=False):
-    """仓库卡片：桌面三列同高，手机切换为宽卡，均由第三方服务渲染。"""
-    base = f"{STATS}/api/pin/?username=haers&repo={repo}&description_lines_count=3"
-    light = "&theme=default&title_color=0969da&icon_color=0969da"
-    dark = "&theme=github_dark&title_color=58a6ff&icon_color=58a6ff"
+    """项目卡片：使用原生描述行数参数统一高度，容器提供组间距。"""
+    base = f"{STATS}/api/pin/?username=haers&repo={repo}&description_lines_count=3&hide_border=true"
+    light = base + "&theme=default&title_color=0969da&icon_color=0969da"
+    dark = base + "&theme=github_dark&title_color=58a6ff&icon_color=58a6ff"
     alt = f"{repo} repository card" if english else f"{name}仓库卡片"
-    return f'''<a href="https://github.com/haers/{repo}">
-<picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="{base}&card_width=400{dark}" />
-  <source media="(max-width: 600px)" srcset="{base}&card_width=400{light}" />
-  <source media="(prefers-color-scheme: dark)" srcset="{base}&card_width=260{dark}" />
-  <img src="{base}&card_width=260{light}" alt="{alt}" />
-</picture>
-</a>'''
+    card = picture(light, dark, alt, 390).replace("\n", "")
+    return f'<a href="https://github.com/haers/{repo}">{card}</a>'
+
+
+def pair(left, right):
+    """双图独立成段，宽屏并排、窄屏自然换行，保留图卡内边距。"""
+    return '<p>\n' + left + '\n' + right + '\n</p>'
 
 
 def project_cards(english=False):
-    """统一项目区间隔，图片按容器宽度自然换行。"""
-    return "&nbsp;&nbsp;\n".join(pin(repo, name, english) for repo, name, _ in PROJECTS)
+    """两张主卡成组，其他项目由文字入口与 GitHub 置顶区承载。"""
+    return pair(*(pin(repo, name, english) for repo, name, _ in PROJECTS[:2]))
 
 
-def code_block(snippet):
-    """折叠示例：为画廊中的实际预览提供可复制源码。"""
-    language = "html" if snippet.lstrip().startswith("<") else "markdown"
-    return f"<details>\n<summary>复制代码</summary>\n\n```{language}\n{snippet}\n```\n\n</details>"
+def code_block(snippet, language=None):
+    """样例代码直接展开，内容与上方预览一致。"""
+    if language is None:
+        language = "html" if snippet.lstrip().startswith("<") else "markdown"
+    return f"```{language}\n{snippet}\n```"
 
 
 def profile(english=False):
-    """双语主页：用仓库卡片、技能图标和统计图构成主要内容。"""
+    """恢复介绍、技能、作品、统计、贡献与联系的原版分块。"""
     if english:
-        title = "Hi, I’m Xiao Zhao / haers"
-        intro = "Java backend developer · Desktop tools & automation · Photography"
-        nav = f"[中文](README.md) · **English** · [Examples]({GALLERY})"
-        project_title, stack_title, activity_title = "Projects", "Tech stack", "GitHub"
-        footer = "[Get in touch](https://github.com/haers/haers/issues)"
-        entries = " · ".join(f"[{repo}]({url})" for repo, _, url in PROJECTS)
-        animation_title = "Contribution snake"
+        title = "👋 Hi, I’m Xiao Zhao!"
+        intro = "I’m a backend developer working mainly with Java. I also enjoy building frontend projects, desktop tools, and automation.\n\nHere I share things I build, notes from learning, and a little of my curiosity about software."
+        nav = f"[中文](README.md) · **English** · [README examples]({GALLERY})"
+        skill_title, project_title, stats_title = "🚀 Skills", "🛠 Projects", "📊 GitHub stats"
+        skill_text = "- **Backend** · Java / Spring Boot / MySQL / Redis / Python\n- **Frontend** · Vue / Nuxt / TypeScript / Tailwind CSS\n- **Tools** · Git / Docker / Linux"
+        activity_title, contact_title = "🐍 Contributions", "📫 Get in touch"
+        contact = "Questions, feedback, or ideas? [Open an issue](https://github.com/haers/haers/issues)."
+        entries = "[Resource directory](https://kuake.netlify.app/) · [Download Xieke](https://github.com/haers/xieke-releases/releases) · [Book library](https://github.com/haers/zhao-book-public)"
     else:
-        title = "你好，我是小赵 / haers"
-        intro = "Java 后端开发 · 桌面工具与自动化 · 喜欢摄影"
+        title = "👋 你好，我是小赵！"
+        intro = "我是一名以 Java 为主的后端开发者，也喜欢折腾前端、桌面工具和自动化。\n\n在这里分享自己的项目、学习笔记和一些有趣的想法，平时也喜欢拿手机拍拍照。"
         nav = f"**中文** · [English](README-en.md) · [效果样例]({GALLERY})"
-        project_title, stack_title, activity_title = "我的作品", "常用技术", "GitHub"
-        footer = "[交流与反馈](https://github.com/haers/haers/issues)"
-        entries = " · ".join(f"[{name}]({url})" for _, name, url in PROJECTS)
-        animation_title = "贡献贪吃蛇"
-    cards = project_cards(english)
+        skill_title, project_title, stats_title = "🚀 我的技能", "🛠 我的项目", "📊 GitHub 数据"
+        skill_text = "- **后端开发** · Java / Spring Boot / MySQL / Redis / Python\n- **前端开发** · Vue / Nuxt / TypeScript / Tailwind CSS\n- **工具与环境** · Git / Docker / Linux"
+        activity_title, contact_title = "🐍 贡献记录", "📫 联系与交流"
+        contact = "如果你有项目问题、使用反馈，或者想交流一些有趣的想法，欢迎 [提一个 Issue](https://github.com/haers/haers/issues)。"
+        entries = "[逛逛资源站](https://kuake.netlify.app/) · [下载歇刻](https://github.com/haers/xieke-releases/releases) · [小赵书库](https://github.com/haers/zhao-book-public)"
     return f'''<!-- 由 scripts/render_profile.py 生成，修改后运行生成器。 -->
 # {title}
 
@@ -110,38 +108,55 @@ def profile(english=False):
 
 {nav}
 
-## {project_title}
+{roast()}
 
-{cards}
+## {skill_title}
 
-{entries}
-
-## {stack_title}
+{skill_text}
 
 {skills(english)}
 
+## {project_title}
+
+{project_cards(english)}
+
+{entries}
+
+## {stats_title}
+
+{pair(stats_card(english=english), stats_card("languages", english))}
+
 ## {activity_title}
-
-{stats_card(english=english)}
-{stats_card("languages", english)}
-
-{roast()}
-
-<details>
-<summary>{animation_title}</summary>
 
 {snake(english)}
 
-</details>
+## {contact_title}
 
-{footer}
+{contact}
 '''
 
 
+def advanced_examples():
+    """已生成的贡献效果使用真实产物，并附上可直接复制的工作流。"""
+    workflow = ROOT / ".github/workflows/effects.yml"
+    sections = []
+    examples = [
+        ("3D 贡献日历", "static/effects/profile-green.svg", "static/effects/profile-night-green.svg"),
+        ("吃豆人贡献动画", "static/effects/pacman.svg", "static/effects/pacman-dark.svg"),
+    ]
+    for title, light, dark in examples:
+        if (ROOT / light).is_file() and (ROOT / dark).is_file():
+            preview = picture(light, dark, f"haers 的{title}", 850)
+            content = f"## {title}\n\n{preview}\n\n{code_block(preview)}\n"
+            content += "\n### GitHub Actions\n\n" + code_block(workflow.read_text().rstrip(), "yaml") + "\n"
+            sections.append(content)
+    return sections
+
+
 def gallery():
-    """样例集：实际预览与对应代码成对展示。"""
-    intro = "你好，我是小赵 / haers\n\nJava 后端开发 · 桌面工具与自动化 · 喜欢摄影"
-    detailed_intro = "\n".join([
+    """效果样例：标题、真实预览和完整代码直接展开。"""
+    intro = "👋 你好，我是小赵！\n\nJava 后端开发 · 桌面工具与自动化 · 喜欢摄影"
+    listed_intro = "\n".join([
         "- 👋 大家好，我是 haers",
         "- 💻 软件研发工程师，主要使用 Java",
         "- 🛠 喜欢折腾前端、桌面工具和自动化",
@@ -150,16 +165,20 @@ def gallery():
     ])
     sections = [
         ("简短介绍", intro),
-        ("列表介绍", detailed_intro),
+        ("列表介绍", listed_intro),
+        ("评分雷达卡", roast()),
         ("技术图标", skills()),
         ("仓库卡片", project_cards()),
-        ("开发统计", stats_card() + "\n" + stats_card("languages")),
+        ("开发统计", pair(stats_card(), stats_card("languages"))),
         ("贡献贪吃蛇", snake()),
-        ("评分雷达卡", roast()),
     ]
     blocks = [f"## {title}\n\n{preview}\n\n{code_block(preview)}\n" for title, preview in sections]
-    sources = "[Skill Icons](https://github.com/tandpfun/skill-icons) · [GitHub Stats Extended](https://github.com/stats-organization/github-stats-extended) · [snk](https://github.com/Platane/snk) · [ghfind](https://ghfind.com)"
-    return "<!-- 由 scripts/render_profile.py 生成，修改后运行生成器。 -->\n# GitHub 主页样例\n\n[返回主页](README.md) · [English](README-en.md)\n\n" + "\n".join(blocks) + "\n---\n\n" + sources + "\n"
+    blocks.extend(advanced_examples())
+    toc = " · ".join(f"[{title}](#{title})" for title, _ in sections)
+    if len(blocks) > len(sections):
+        toc += " · [3D 贡献日历](#3d-贡献日历) · [吃豆人贡献动画](#吃豆人贡献动画)"
+    sources = "[Skill Icons](https://github.com/tandpfun/skill-icons) · [GitHub Stats Extended](https://github.com/stats-organization/github-stats-extended) · [snk](https://github.com/Platane/snk) · [ghfind](https://ghfind.com) · [3D Contrib](https://github.com/yoshi389111/github-profile-3d-contrib) · [Pac-Man](https://github.com/abozanona/pacman-contribution-graph)"
+    return "<!-- 由 scripts/render_profile.py 生成，修改后运行生成器。 -->\n# GitHub 主页效果样例\n\n[返回主页](README.md) · [English](README-en.md)\n\n" + toc + "\n\n" + "\n".join(blocks) + "\n---\n\n" + sources + "\n"
 
 
 def validate(path, text):
@@ -173,7 +192,7 @@ def validate(path, text):
     for link in re.findall(r"\]\(([^)]+)\)", visible) + re.findall(r'(?:src|srcset)="([^"]+)"', visible):
         if not link.startswith(("https://", "#")):
             assert (ROOT / link).is_file(), f"本地链接缺失：{path} / {link}"
-    assert visible.count("<details>") == visible.count("</details>")
+    assert "<details" not in visible, f"{path} 的内容应直接展开"
 
 
 def validate_workflow():
