@@ -98,6 +98,7 @@ def profile(english=False):
         activity_title, contact_title = "👾 贡献记录", "📫 联系与交流"
         contact = "如果你有项目问题、使用反馈，或者想交流一些有趣的想法，欢迎 [提一个 Issue](https://github.com/haers/haers/issues)。"
     return f'''<!-- 由 scripts/render_profile.py 生成，修改后运行生成器。 -->
+
 # {title}
 
 {intro}

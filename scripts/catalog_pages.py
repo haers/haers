@@ -20,13 +20,13 @@ def public_assets(snippet):
 
 def section(title, preview):
     """具体场景只展示名称与实际效果。"""
-    return f'### {title}\n\n{public_assets(preview)}\n'
+    return f'### {title}\n\n{public_assets(preview).strip()}\n\n'
 
 
 def document(path, title, nav, body, source=None):
     """提供 GitHub 原生源码入口，预览页保持图文展示。"""
     code = f'https://github.com/haers/haers/blob/main/{path}?plain=1'
-    result = f'<!-- 由 scripts/render_profile.py 生成。 -->\n# {title}\n\n{nav} · [查看源码]({code})\n\n{body.rstrip()}\n'
+    result = f'<!-- 由 scripts/render_profile.py 生成。 -->\n\n# {title}\n\n{nav} · [查看源码]({code})\n\n{body.rstrip()}\n'
     if source:
         result += '\n---\n\n' + source + '\n'
     return result
@@ -64,7 +64,7 @@ def badge_examples():
         preview = f'[![Shields {style} 示例]({RAW}static/examples/shields-{style}.svg)](https://github.com/haers/haers)'
         parts.append(section(style, preview))
     parts.append(section('项目访问与下载入口', ui.project_entries()))
-    return '\n\n'.join(parts)
+    return '\n\n'.join(part.strip() for part in parts)
 
 
 def stats_image(kind='stats', layout='compact', dark=False):
@@ -89,7 +89,7 @@ def card_examples():
         base = f'{ui.STATS}/api/pin/?username={owner}&repo={repo}&description_lines_count=3&hide_border=true'
         preview = f'<a href="https://github.com/{owner}/{repo}">' + ui.picture(base + '&theme=default', base + '&theme=github_dark', f'{owner}/{repo} 项目卡片', 400) + '</a>'
         parts.append(section(title, preview))
-    return '\n\n'.join(parts)
+    return '\n\n'.join(part.strip() for part in parts)
 
 
 def contribution_examples():
@@ -102,7 +102,7 @@ def contribution_examples():
     for style, title in CALENDAR_STYLES.items():
         parts.append(section(title, f'![haers 的{title}]({RAW}static/effects/profile-{style}.svg)'))
     parts.extend(['## 贡献贪吃蛇', section('明暗主题', ui.snake())])
-    return '\n\n'.join(parts)
+    return '\n\n'.join(part.strip() for part in parts)
 
 
 def catalog_pages():

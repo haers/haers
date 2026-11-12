@@ -5,6 +5,7 @@ on:
     paths:
       - '*.md'
       - 'scripts/**'
+      - 'requirements-check.txt'
       - 'examples/**'
       - 'static/**'
       - '.github/workflows/**'
@@ -21,6 +22,16 @@ jobs:
     steps:
       - name: 检出主页源码
         uses: actions/checkout@v4
+      - name: 准备 Markdown 渲染检查
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 安装检查依赖
+        run: python3 -m pip install -r requirements-check.txt
+      - name: 检查 Markdown 实际渲染与回归用例
+        run: |
+          python3 -m unittest discover -s scripts -p 'test_*.py'
+          python3 scripts/check_markdown.py
       - name: 检查生成文件、链接和图片说明
         run: python3 scripts/render_profile.py --check
       - name: 检查差异格式

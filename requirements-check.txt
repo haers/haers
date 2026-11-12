@@ -1,0 +1,2 @@
+# 用 CommonMark 解析器核对实际 HTML 标题，捕获 HTML 块吞掉后续标题的问题。
+markdown-it-py==4.0.0

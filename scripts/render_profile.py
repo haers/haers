@@ -21,6 +21,12 @@ def validate(name, text):
     assert 'undefined' not in visible
     assert not re.search(r'\]\(\s*\)', visible)
     assert '<details' not in visible, f'{name} 的内容应直接展开'
+    lines = visible.splitlines()
+    for index, line in enumerate(lines):
+        if re.match(r'^#{1,6} ', line):
+            assert index == 0 or not lines[index - 1].strip(), f'{name}:{index + 1} 标题前缺少空行'
+            assert index + 1 == len(lines) or not lines[index + 1].strip(), f'{name}:{index + 1} 标题后缺少空行'
+
     if name.startswith('examples/'):
         assert '```' not in text, f'{name} 预览页不应展示代码块'
     for tag in re.findall(r'<img\b[^>]*>', visible):
