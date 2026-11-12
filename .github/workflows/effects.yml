@@ -39,7 +39,7 @@ jobs:
         uses: abozanona/pacman-contribution-graph@70945878b1118303b37b88060fc7145e1a57d7b1
         with:
           github_user_name: ${{ github.repository_owner }}
-          games: pacman
+          games: pacman,breakout,galaga,puzzle-bobble,bomberman,minesweeper,snake,tetris
 
       - name: 收集明暗主题产物
         shell: bash
@@ -53,7 +53,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git add -- static/effects/profile-green.svg static/effects/profile-night-green.svg static/effects/pacman.svg static/effects/pacman-dark.svg '其他一些好看的效果.md'
+          git add -- static/effects/profile-green.svg static/effects/profile-green-animate.svg static/effects/profile-season.svg static/effects/profile-season-animate.svg static/effects/profile-south-season.svg static/effects/profile-south-season-animate.svg static/effects/profile-night-view.svg static/effects/profile-night-green.svg static/effects/profile-night-rainbow.svg static/effects/profile-gitblock.svg static/effects/pacman.svg static/effects/pacman-dark.svg static/effects/breakout.svg static/effects/breakout-dark.svg static/effects/galaga.svg static/effects/galaga-dark.svg static/effects/puzzle-bobble.svg static/effects/puzzle-bobble-dark.svg static/effects/bomberman.svg static/effects/bomberman-dark.svg static/effects/minesweeper.svg static/effects/minesweeper-dark.svg static/effects/snake.svg static/effects/snake-dark.svg static/effects/tetris.svg static/effects/tetris-dark.svg examples/contributions/arcade.md examples/contributions/3d-calendar.md
           if git diff --cached --quiet; then
             echo '效果没有变化'
             exit 0

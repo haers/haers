@@ -5,7 +5,7 @@ I’m a backend developer working mainly with Java. I also enjoy building fronte
 
 Here I share things I build, notes from learning, and a little of my curiosity about software.
 
-[中文](README.md) · **English** · [README examples](其他一些好看的效果.md)
+[中文](README.md) · **English** · [Effect library](examples/README.md)
 
 [![GitHub Roast 评分卡](https://ghfind.com/api/card/mini/haers?variant=radar&theme=dark&lang=zh)](https://ghfind.com/u/haers?ref=badge)
 

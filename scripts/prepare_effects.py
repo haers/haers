@@ -5,16 +5,13 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCES = {
-    'profile-3d-contrib/profile-green.svg': 'profile-green.svg',
-    'profile-3d-contrib/profile-night-green.svg': 'profile-night-green.svg',
-    'dist/pacman-contribution-graph.svg': 'pacman.svg',
-    'dist/pacman-contribution-graph-dark.svg': 'pacman-dark.svg',
-}
+from effect_assets import effect_sources
+
+SOURCES = effect_sources()
 
 
 def main():
-    """所有输入通过校验后，再写入四个明确的公开产物路径。"""
+    """所有输入通过校验后，再写入明确的公开产物路径。"""
     outputs = {}
     for source, name in SOURCES.items():
         text = (ROOT / source).read_text()
@@ -29,7 +26,7 @@ def main():
     target.mkdir(parents=True, exist_ok=True)
     for name, text in outputs.items():
         (target / name).write_text(text)
-    print('四份贡献效果已校验并规范化')
+    print(f'{len(outputs)} 份贡献效果已校验并规范化')
 
 
 if __name__ == '__main__':

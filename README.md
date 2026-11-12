@@ -5,7 +5,7 @@
 
 在这里分享自己的项目、学习笔记和一些有趣的想法，平时也喜欢拿手机拍拍照。
 
-**中文** · [English](README-en.md) · [效果样例](其他一些好看的效果.md)
+**中文** · [English](README-en.md) · [效果库](examples/README.md)
 
 [![GitHub Roast 评分卡](https://ghfind.com/api/card/mini/haers?variant=radar&theme=dark&lang=zh)](https://ghfind.com/u/haers?ref=badge)
 
