@@ -10,7 +10,7 @@
 
 <p>
 <a href="https://kuake.netlify.app/"><img src="static/links/resource-zh.svg" alt="资源站 · 在线浏览" height="20" /></a>
-<a href="https://github.com/haers/xieke-releases/releases"><img src="static/links/xieke-zh.svg" alt="歇刻 · macOS 下载" height="20" /></a>
+<a href="https://github.com/haers/zhao-xieke-releases/releases"><img src="static/links/xieke-zh.svg" alt="歇刻 · macOS 下载" height="20" /></a>
 <a href="https://github.com/haers/zhao-book-public"><img src="static/links/book-zh.svg" alt="书库 · 查看仓库" height="20" /></a>
 </p>
 
@@ -28,7 +28,7 @@
 
 <p>
 <a href="https://github.com/haers/zhao-resource"><picture>  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-resource&description_lines_count=3&hide_border=true&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />  <img src="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-resource&description_lines_count=3&hide_border=true&theme=default&title_color=0969da&icon_color=0969da" alt="小赵资源站仓库卡片" width="390" align="top" /></picture></a>
-<a href="https://github.com/haers/xieke-releases"><picture>  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=xieke-releases&description_lines_count=3&hide_border=true&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />  <img src="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=xieke-releases&description_lines_count=3&hide_border=true&theme=default&title_color=0969da&icon_color=0969da" alt="歇刻仓库卡片" width="390" align="top" /></picture></a>
+<a href="https://github.com/haers/zhao-xieke-releases"><picture>  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-xieke-releases&description_lines_count=3&hide_border=true&theme=github_dark&title_color=58a6ff&icon_color=58a6ff" />  <img src="https://github-stats-extended.vercel.app/api/pin/?username=haers&repo=zhao-xieke-releases&description_lines_count=3&hide_border=true&theme=default&title_color=0969da&icon_color=0969da" alt="歇刻仓库卡片" width="390" align="top" /></picture></a>
 </p>
 
 ## 📊 GitHub 数据

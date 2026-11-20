@@ -8,7 +8,7 @@ STATS = "https://github-stats-extended.vercel.app"
 ROAST = "https://ghfind.com/api/card/mini/haers?variant=radar&theme=dark&lang=zh"
 PROJECTS = [
     ("zhao-resource", "小赵资源站", "https://kuake.netlify.app/"),
-    ("xieke-releases", "歇刻", "https://github.com/haers/xieke-releases/releases"),
+    ("zhao-xieke-releases", "歇刻", "https://github.com/haers/zhao-xieke-releases/releases"),
     ("zhao-book-public", "小赵书库", "https://github.com/haers/zhao-book-public"),
 ]
 

@@ -67,7 +67,7 @@
 
 <p>
 <a href="https://kuake.netlify.app/"><img src="https://raw.githubusercontent.com/haers/haers/main/static/links/resource-zh.svg" alt="资源站 · 在线浏览" height="20" /></a>
-<a href="https://github.com/haers/xieke-releases/releases"><img src="https://raw.githubusercontent.com/haers/haers/main/static/links/xieke-zh.svg" alt="歇刻 · macOS 下载" height="20" /></a>
+<a href="https://github.com/haers/zhao-xieke-releases/releases"><img src="https://raw.githubusercontent.com/haers/haers/main/static/links/xieke-zh.svg" alt="歇刻 · macOS 下载" height="20" /></a>
 <a href="https://github.com/haers/zhao-book-public"><img src="https://raw.githubusercontent.com/haers/haers/main/static/links/book-zh.svg" alt="书库 · 查看仓库" height="20" /></a>
 </p>
 
